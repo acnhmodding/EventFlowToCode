@@ -25,7 +25,7 @@ dotnet build EventFlowToCode.slnx -c Release -p:UseLocalBfevLibrary=true
 Install into a .NET 10 project:
 
 ```sh
-dotnet add package EventFlowToCode.Core --version 1.0.0
+dotnet add package AcnhModding.EventFlowToCode.Core --version 1.0.0
 ```
 
 ```csharp

@@ -1,9 +1,16 @@
-name: Publish EventFlowToCode.Core to NuGet
+name: Publish AcnhModding.EventFlowToCode.Core to NuGet
 
 on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Package version to publish
+        required: true
+        default: "1.0.0"
+        type: string
 
 permissions:
   contents: read
@@ -11,6 +18,8 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      PACKAGE_VERSION: ${{ inputs.version || github.ref_name }}
     permissions:
       contents: read
       id-token: write
@@ -24,11 +33,11 @@ jobs:
 
       - name: Build solution
         shell: bash
-        run: dotnet build EventFlowToCode.slnx --configuration Release -p:Version="${GITHUB_REF_NAME#v}" -p:ContinuousIntegrationBuild=true
+        run: dotnet build EventFlowToCode.slnx --configuration Release -p:Version="${PACKAGE_VERSION#v}" -p:ContinuousIntegrationBuild=true
 
       - name: Pack Core
         shell: bash
-        run: dotnet pack EventFlowToCode.Core/EventFlowToCode.Core.csproj --configuration Release --no-build -p:Version="${GITHUB_REF_NAME#v}" -p:ContinuousIntegrationBuild=true --output artifacts
+        run: dotnet pack EventFlowToCode.Core/EventFlowToCode.Core.csproj --configuration Release --no-build -p:Version="${PACKAGE_VERSION#v}" -p:ContinuousIntegrationBuild=true --output artifacts
 
       - name: Authenticate to NuGet
         uses: NuGet/login@v1

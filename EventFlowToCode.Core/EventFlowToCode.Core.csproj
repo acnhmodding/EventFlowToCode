@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageId>EventFlowToCode.Core</PackageId>
+    <PackageId>AcnhModding.EventFlowToCode.Core</PackageId>
     <Version>1.0.0</Version>
     <Authors>ACNH Modding</Authors>
     <Description>Compiler and decompiler for readable Nintendo EventFlow (.bfevfl) source.</Description>
