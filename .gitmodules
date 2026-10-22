@@ -1,0 +1,3 @@
+[submodule "BfevLibrary"]
+	path = BfevLibrary
+	url = https://github.com/acnhmodding/BfevLibrary

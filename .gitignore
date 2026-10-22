@@ -1,0 +1,35 @@
+# .NET build output
+[Bb]in/
+[Oo]bj/
+artifacts/
+[Pp]ublish/
+*.nupkg
+*.snupkg
+
+# Visual Studio, Rider and user-specific settings
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Test output and coverage
+[Tt]est[Rr]esult*/
+coverage/
+*.coverage
+*.coveragexml
+coverage.cobertura.xml
+coverage.opencover.xml
+
+# Local diagnostics and temporary files
+.codex_tmp/
+*.log
+*.tmp
+*.bak
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
