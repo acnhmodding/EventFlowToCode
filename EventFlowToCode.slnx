@@ -1,5 +1,4 @@
 <Solution>
-  <Project Path="BfevLibrary/src/BfevLibrary.csproj" />
   <Project Path="EventFlowToCode.CLI/EventFlowToCode.CLI.csproj" />
   <Project Path="EventFlowToCode.Core/EventFlowToCode.Core.csproj" />
 </Solution>
